@@ -5,22 +5,22 @@ import Image from 'next/image';
 const instaPosts = [
   {
     id: 1,
-    image: '/for post/post1.png',
+    image: 'https://res.cloudinary.com/ejz1wp0a/image/upload/v1786818293/post1.png',
     link: 'https://www.instagram.com/arun_achu_26'
   },
   {
     id: 2,
-    image: '/for post/post2.png',
+    image: 'https://res.cloudinary.com/ejz1wp0a/image/upload/v1786818294/post2.png',
     link: 'https://www.instagram.com/arun_achu_26'
   },
   {
     id: 3,
-    image: '/for post/post3.png',
+    image: 'https://res.cloudinary.com/ejz1wp0a/image/upload/v1786818294/post3.png',
     link: 'https://www.instagram.com/arun_achu_26'
   },
   {
     id: 4,
-    image: '/for post/post4.png',
+    image: 'https://res.cloudinary.com/ejz1wp0a/image/upload/v1786818295/post4.png',
     link: 'https://www.instagram.com/arun_achu_26'
   }
 ];
