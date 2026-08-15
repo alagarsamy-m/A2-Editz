@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #050505;
+  --color-foreground: #e0e0e0;
+  --color-accent: #ef4444;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 2%;
+    --foreground: 0 0% 88%;
+  }
+  
+  html,
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    @apply antialiased;
+  }
+  
+  /* Hide cursor on non-touch devices */
+  @media (pointer: fine) {
+    body, a, button, [role="button"] {
+      cursor: none;
+    }
+  }
+
+  ::selection {
+    background-color: #ef4444;
+    color: #050505;
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
