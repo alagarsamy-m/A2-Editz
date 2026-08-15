@@ -47,7 +47,7 @@ export default function About() {
               className="relative aspect-square w-full overflow-hidden bg-[#111]"
             >
               <Image
-                src="/639752021_18074974154381669_6226053457561429232_n.webp"
+                src="https://res.cloudinary.com/ejz1wp0a/image/upload/v1786818331/639752021_18074974154381669_6226053457561429232_n.webp"
                 alt="Arun Profile"
                 fill
                 className="object-cover opacity-80 hover:opacity-100 transition-opacity duration-500 grayscale hover:grayscale-0"
@@ -64,7 +64,7 @@ export default function About() {
                 className="relative w-full h-full overflow-hidden bg-[#111]"
               >
                 <Image
-                  src="/639725833_18074974157381669_1949812397734097825_n.webp"
+                  src="https://res.cloudinary.com/ejz1wp0a/image/upload/v1786818331/639725833_18074974157381669_1949812397734097825_n.webp"
                   alt="Arun Working"
                   fill
                   className="object-cover opacity-80 hover:opacity-100 transition-opacity duration-500 grayscale hover:grayscale-0"
@@ -78,7 +78,7 @@ export default function About() {
                 className="relative w-full h-full overflow-hidden bg-[#111]"
               >
                 <Image
-                  src="/639761065_18074974139381669_3007896066017209124_n.webp"
+                  src="https://res.cloudinary.com/ejz1wp0a/image/upload/v1786818333/639761065_18074974139381669_3007896066017209124_n.webp"
                   alt="Arun Editing"
                   fill
                   className="object-cover opacity-80 hover:opacity-100 transition-opacity duration-500 grayscale hover:grayscale-0"
