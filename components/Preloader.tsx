@@ -6,18 +6,33 @@ export default function Preloader() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    const body = document.body;
+    const html = document.documentElement;
+    const previousBodyOverflow = body.style.overflow;
+    const previousHtmlOverflow = html.style.overflow;
+
+    const lockScroll = () => {
+      body.style.overflow = 'hidden';
+      html.style.overflow = 'hidden';
+    };
+
+    const unlockScroll = () => {
+      body.style.overflow = previousBodyOverflow;
+      html.style.overflow = previousHtmlOverflow;
+    };
+
+    lockScroll();
+
     // 1.5 seconds maximum preloader
     const timer = setTimeout(() => {
       setIsLoading(false);
       window.scrollTo(0, 0);
+      unlockScroll();
     }, 1500);
-    
-    // Prevent scrolling while loading
-    document.body.style.overflow = 'hidden';
-    
+
     return () => {
       clearTimeout(timer);
-      document.body.style.overflow = 'auto';
+      unlockScroll();
     };
   }, []);
 

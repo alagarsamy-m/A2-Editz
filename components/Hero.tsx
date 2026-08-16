@@ -14,7 +14,7 @@ export default function Hero() {
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
-    <section ref={containerRef} className="relative h-screen w-full overflow-hidden flex items-center justify-center">
+    <section ref={containerRef} className="relative min-h-[100svh] md:h-screen w-full overflow-hidden flex items-center justify-center">
       {/* Background Image / Video Fallback */}
       <motion.div style={{ y, opacity }} className="absolute inset-0 z-0 bg-black">
         <Image
@@ -83,7 +83,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 z-10"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-3 z-10"
       >
         <span className="text-[10px] tracking-[0.3em] uppercase text-white/50 font-display">Scroll</span>
         <div className="w-[1px] h-12 bg-white/20 overflow-hidden relative">

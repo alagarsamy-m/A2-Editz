@@ -2,6 +2,7 @@
 import { motion, useScroll, useTransform } from 'motion/react';
 import { useRef, useState } from 'react';
 import { Play } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const projects = [
   {
@@ -44,7 +45,7 @@ function ProjectCard({ project }: { project: any }) {
 
   return (
     <div 
-      className={`relative flex-shrink-0 group w-[85vw] md:w-[60vw] lg:w-[45vw] ${project.aspect} overflow-hidden bg-[#111] cursor-pointer`}
+      className={`relative flex-shrink-0 group w-full md:w-[60vw] lg:w-[45vw] ${project.aspect} overflow-hidden bg-[#111] cursor-pointer`}
       onClick={handlePlay}
     >
       <video
@@ -91,6 +92,7 @@ function ProjectCard({ project }: { project: any }) {
 
 export default function Portfolio() {
   const targetRef = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
   
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -120,10 +122,10 @@ export default function Portfolio() {
         </motion.div>
       </div>
 
-      {/* Horizontal Scroll Area */}
-      <div ref={targetRef} className="h-[300vh] relative">
-        <div className="sticky top-0 h-screen flex items-center overflow-hidden">
-          <motion.div style={{ x }} className="flex gap-8 px-6 md:px-24">
+      {/* Scroll Area */}
+      <div ref={targetRef} className={`${isMobile ? 'relative' : 'h-[300vh] relative'}`}>
+        <div className={`${isMobile ? 'flex flex-col gap-6 px-6 pb-8' : 'sticky top-0 h-[100svh] md:h-screen flex items-center overflow-hidden'}`}>
+          <motion.div style={isMobile ? undefined : { x }} className={`${isMobile ? 'flex flex-col gap-6' : 'flex gap-8 px-6 md:px-24'}`}>
             {projects.map((project) => (
               <ProjectCard key={project.id} project={project} />
             ))}
